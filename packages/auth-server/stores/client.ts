@@ -24,11 +24,11 @@ type ChainContracts = PasskeyRequiredContracts & {
 };
 export const contractsByChain: Record<SupportedChainId, ChainContracts> = {
   [zksyncSepoliaTestnet.id]: {
-    session: "0x64Bf5C3229CafF50e39Ec58C4BFBbE67bEA90B0F",
-    passkey: "0x0F65cFE984d494DAa7165863f1Eb61C606e45fFb",
-    recovery: "0xDf8F9b39Cd69Cb8Dc29137f83E89fE1AdA26912D",
-    accountFactory: "0x73CFa70318FD25F2166d47Af9d93Cf72eED48724",
-    accountPaymaster: "0xA46D949858335308859076FA605E773eB679e534",
+    session: "0x0BDaB9376724D6B713091a821D9b1EC7565016a7",
+    passkey: "0xD16243cDef211a9202F2cA330F08ba2F3f494fd6",
+    recovery: "0x3Dc1091185C5378222c4d66Dad4379A9e8908A59",
+    accountFactory: "0x946160fC96fbc620fe9415C7d48Bf84235b4E666",
+    accountPaymaster: "0xAF7F7C9567a80E55526089Bf1b07e5Ba80cC8998",
   },
   [zksyncInMemoryNode.id]: localChainData as ChainContracts,
 };

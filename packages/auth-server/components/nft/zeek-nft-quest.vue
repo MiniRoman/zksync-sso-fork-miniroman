@@ -54,27 +54,27 @@ const nftAddress = runtimeConfig.public[chainId].nftQuestAddress as Address;
 const nftMetadata = ref<null | { animation_url: string; background_color: string; description: string; image: string }>(null);
 const hasNft = ref(false);
 
-const getNFTTransactions = async function () {
-  const { getPublicClient, defaultChain } = useClientStore();
+// const getNFTTransactions = async function () {
+//   const { getPublicClient, defaultChain } = useClientStore();
 
-  const client = getPublicClient({ chainId: chainId ?? defaultChain.id });
-  const res = await client.readContract({
-    address: nftAddress,
-    abi: ZeekNftQuestAbi,
-    functionName: "balanceOf",
-    args: [address as Address],
-  });
+//   const client = getPublicClient({ chainId: chainId ?? defaultChain.id });
+//   const res = await client.readContract({
+//     address: nftAddress,
+//     abi: ZeekNftQuestAbi,
+//     functionName: "balanceOf",
+//     args: [address as Address],
+//   });
 
-  if (res) {
-    hasNft.value = true;
-  } else {
-    hasNft.value = false;
-    return;
-  }
+//   if (res) {
+//     hasNft.value = true;
+//   } else {
+//     hasNft.value = false;
+//     return;
+//   }
 
-  const fetchNftMetadata = await useNftMetadata({ address: nftAddress, abi: ZeekNftQuestAbi });
-  nftMetadata.value = fetchNftMetadata.data.value as { animation_url: string; background_color: string; description: string; image: string };
-};
+//   const fetchNftMetadata = await useNftMetadata({ address: nftAddress, abi: ZeekNftQuestAbi });
+//   nftMetadata.value = fetchNftMetadata.data.value as { animation_url: string; background_color: string; description: string; image: string };
+// };
 
-await getNFTTransactions();
+// await getNFTTransactions();
 </script>
